@@ -1,0 +1,50 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="bg-black pt-16 pb-8 border-t border-white/10 mt-24">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+      <!-- Brand Section -->
+      <div class="space-y-4">
+        <a href="/" class="block mx-auto md:mx-0 w-fit">
+          <img src="/images/logo w text.png" alt="VELTRIQ" class="w-32 opacity-90 transition-opacity hover:opacity-100">
+        </a>
+        <p class="text-gray-400 text-sm font-light tracking-wide max-w-xs mx-auto md:mx-0">
+          Minimal. Timeless. Essentials for the modern wardrobe.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="space-y-4">
+        <h3 class="text-white font-semibold uppercase tracking-widest text-sm">Shop</h3>
+        <ul class="space-y-2 text-gray-400 text-sm font-light">
+          <li><a href="/#new-releases" class="hover:text-white transition-colors">New Releases</a></li>
+          <li><a href="/categories/oversized-tshirts" class="hover:text-white transition-colors">Oversized T-Shirts</a></li>
+          <li><a href="/categories/crop-tops" class="hover:text-white transition-colors">Crop Tops</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact & Social -->
+      <div class="space-y-4">
+        <h3 class="text-white font-semibold uppercase tracking-widest text-sm">Contact</h3>
+        <ul class="space-y-2 text-gray-400 text-sm font-light">
+          <li>
+            <a href="mailto:support@veltriq.shop" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center justify-center md:justify-start gap-2">
+              <span>support@veltriq.shop</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/veltriq" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors flex items-center justify-center md:justify-start gap-2">
+              <span>Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-16 mb-0 pt-8 border-t border-white/5 text-center text-gray-500 text-xs font-light tracking-wider uppercase">
+      <p>&copy; {currentYear} VELTRIQ. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

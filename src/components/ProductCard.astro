@@ -1,0 +1,26 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  product: any;
+}
+
+const { product } = Astro.props;
+---
+
+<a href={`/products/${product.slug}`} class="group block focus:outline-none focus:ring-2 focus:ring-white/50 rounded-xl">
+  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-xl bg-white/5 border border-white/5 transition-all duration-500 ease-out group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-white/5 xl:aspect-w-7 xl:aspect-h-8">
+    <img
+      src={product.images[0]}
+      alt={product.name}
+      class="h-full w-full object-cover object-center transition-transform duration-700 ease-in-out group-hover:scale-105"
+    />
+  </div>
+  <h3 class="mt-4 text-sm font-light text-gray-300 tracking-wide uppercase group-hover:text-white transition-colors">{product.name}</h3>
+  <div class="mt-1 flex items-center gap-2">
+    <p class="text-base font-semibold text-white tracking-wider">{product.price}</p>
+    {product.originalPrice && (
+      <p class="text-sm text-gray-500 line-through decoration-white/30 decoration-1">{product.originalPrice}</p>
+    )}
+  </div>
+</a>

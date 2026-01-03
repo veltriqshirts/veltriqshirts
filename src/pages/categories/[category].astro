@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../data/products.json';
+import { capitalCase } from 'change-case';
+
+export async function getStaticPaths() {
+  const categories = [...new Set(products.map(p => p.category))];
+  return categories.map(category => ({
+    params: { category },
+  }));
+}
+
+const { category } = Astro.params;
+const categoryProducts = products.filter(p => p.category === category);
+const categoryName = capitalCase(category);
+---
+
+<Layout title={`${categoryName} - VELTRIQ`}>
+  <div class="container mx-auto px-4 py-24 pt-32">
+    <SectionHeading title={categoryName} />
+    <div class="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 mt-12">
+      {categoryProducts.map(product => (
+        <ProductCard {product} />
+      ))}
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Oversized Tee - Black",
+    "slug": "oversized-tee-black",
+    "category": "oversized-tshirts",
+    "price": "₹1,299",
+    "originalPrice": "₹1,999",
+    "description": "A classic oversized t-shirt made from premium heavyweight cotton. Perfect for a minimal, relaxed fit.",
+    "images": ["/images/pic01.jpg", "/images/pic05.jpg", "/images/pic09.jpg"],
+    "colors": ["Black", "White"],
+    "sizes": ["S", "M", "L", "XL"],
+    "tags": ["new", "bestseller"]
+  },
+  {
+    "name": "Crop Top - White",
+    "slug": "crop-top-white",
+    "category": "crop-tops",
+    "price": "₹999",
+    "originalPrice": "₹1,499",
+    "description": "A stylish and comfortable crop top, designed for a modern and chic look.",
+    "images": ["/images/pic02.jpg", "/images/pic06.jpg"],
+    "colors": ["White", "Black"],
+    "sizes": ["XS", "S", "M"],
+    "tags": ["new"]
+  },
+  {
+    "name": "Oversized Tee - White",
+    "slug": "oversized-tee-white",
+    "category": "oversized-tshirts",
+    "price": "₹1,299",
+    "description": "A classic oversized t-shirt made from premium heavyweight cotton. Perfect for a minimal, relaxed fit.",
+    "images": ["/images/pic03.jpg", "/images/pic07.jpg"],
+    "colors": ["White", "Black"],
+    "sizes": ["S", "M", "L", "XL"],
+    "tags": ["bestseller"]
+  },
+  {
+    "name": "Crop Top - Black",
+    "slug": "crop-top-black",
+    "category": "crop-tops",
+    "price": "₹999",
+    "description": "A stylish and comfortable crop top, designed for a modern and chic look.",
+    "images": ["/images/pic04.jpg", "/images/pic08.jpg"],
+    "colors": ["Black", "White"],
+    "sizes": ["XS", "S", "M"],
+    "tags": []
+  }
+]

@@ -1,0 +1,75 @@
+---
+const links = [
+  { name: 'Browse', href: '/#new-releases' },
+  { name: 'Oversized T-Shirts', href: '/categories/oversized-tshirts' },
+  { name: 'Crop Tops', href: '/categories/crop-tops' },
+];
+---
+<header
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+>
+  <div id="navbar-bg" class="absolute inset-0 -z-10 bg-gradient-to-b from-black/80 to-transparent backdrop-blur-none transition-all duration-300"></div>
+
+  <div class="container mx-auto px-6">
+    <div class="flex justify-between items-center h-20">
+      <div class="text-2xl font-bold">
+        <a href="/" class="block transform transition-transform duration-300 hover:scale-105">
+          <img src="/images/logo.png" alt="VELTRIQ" class="w-10 opacity-90 hover:opacity-100 duration-300">
+        </a>
+      </div>
+      <nav class="hidden md:flex space-x-12">
+        {links.map(link => (
+          <a href={link.href} class="text-sm font-medium uppercase tracking-widest text-white/70 hover:text-white focus:text-white focus:outline-none transition-colors duration-300 relative group">
+            {link.name}
+            <span class="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover:w-full group-focus:w-full"></span>
+          </a>
+        ))}
+      </nav>
+      <div class="md:hidden">
+        <button id="menu-button" class="text-white/80 hover:text-white focus:outline-none transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="mobile-menu" class="md:hidden top-full left-0 absolute w-full transition-[max-height,opacity] duration-300 ease-in-out max-h-0 opacity-0 overflow-hidden bg-black/40 backdrop-blur-md border-t border-white/10">
+    <div class="px-4 py-6 space-y-4">
+      {links.map(link => (
+        <a href={link.href} class="block text-lg font-medium text-white/80 hover:text-white hover:pl-2 transition-all duration-300">{link.name}</a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const navbarBg = document.getElementById('navbar-bg');
+  const menuButton = document.getElementById('menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  // Handle scroll to change navbar intensity
+  if (navbarBg && menuButton && mobileMenu) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) {
+        navbarBg.classList.remove('bg-gradient-to-b', 'from-black/80', 'to-transparent', 'border-transparent', 'backdrop-blur-none');
+        navbarBg.classList.add('bg-black/60', 'backdrop-blur-md', 'border-white/5', 'shadow-lg');
+      } else {
+        navbarBg.classList.add('bg-gradient-to-b', 'from-black/80', 'to-transparent', 'border-transparent', 'backdrop-blur-none');
+        navbarBg.classList.remove('bg-black/60', 'backdrop-blur-md', 'border-white/5', 'shadow-lg');
+      }
+    });
+
+    // Handle mobile menu toggle
+    menuButton.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('max-h-0')) {
+        mobileMenu.classList.remove('max-h-0', 'opacity-0');
+        mobileMenu.classList.add('max-h-96', 'opacity-100');
+      } else {
+        mobileMenu.classList.add('max-h-0', 'opacity-0');
+        mobileMenu.classList.remove('max-h-96', 'opacity-100');
+      }
+    });
+  }
+</script>
