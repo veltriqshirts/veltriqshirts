@@ -7,7 +7,10 @@
     "originalPrice": "₹1,999",
     "description": "A classic oversized t-shirt made from premium heavyweight cotton. Perfect for a minimal, relaxed fit.",
     "images": ["/images/pic01.jpg", "/images/pic05.jpg", "/images/pic09.jpg"],
-    "colors": ["Black", "White"],
+    "colors": [
+      { "name": "Black", "hex": "#000000" },
+      { "name": "White", "hex": "#FFFFFF" }
+    ],
     "sizes": ["S", "M", "L", "XL"],
     "tags": ["new", "bestseller"]
   },
@@ -19,8 +22,12 @@
     "originalPrice": "₹1,499",
     "description": "A stylish and comfortable crop top, designed for a modern and chic look.",
     "images": ["/images/pic02.jpg", "/images/pic06.jpg"],
-    "colors": ["White", "Black"],
-    "sizes": ["XS", "S", "M"],
+    "colors": [
+      { "name": "White", "hex": "#FFFFFF" },
+      { "name": "Black", "hex": "#000000" },
+      { "name": "Grey", "hex": "#808080" }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL"],
     "tags": ["new"]
   },
   {
@@ -30,7 +37,10 @@
     "price": "₹1,299",
     "description": "A classic oversized t-shirt made from premium heavyweight cotton. Perfect for a minimal, relaxed fit.",
     "images": ["/images/pic03.jpg", "/images/pic07.jpg"],
-    "colors": ["White", "Black"],
+    "colors": [
+      { "name": "White", "hex": "#FFFFFF" },
+      { "name": "Black", "hex": "#000000" }
+    ],
     "sizes": ["S", "M", "L", "XL"],
     "tags": ["bestseller"]
   },
@@ -41,7 +51,10 @@
     "price": "₹999",
     "description": "A stylish and comfortable crop top, designed for a modern and chic look.",
     "images": ["/images/pic04.jpg", "/images/pic08.jpg"],
-    "colors": ["Black", "White"],
+    "colors": [
+      { "name": "Black", "hex": "#000000" },
+      { "name": "White", "hex": "#FFFFFF" }
+    ],
     "sizes": ["XS", "S", "M"],
     "tags": []
   }

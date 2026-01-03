@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import products from '../../data/products.json';
+import SizeChart from '../../components/SizeChart.astro';
 
 export async function getStaticPaths() {
   return products.map(product => ({
@@ -17,22 +18,26 @@ if (!product) {
 ---
 
 <Layout title={`${product.name} - VELTRIQ`}>
-  <div class="container mx-auto px-4 pt-40 pb-24">
+  <div class="container mx-auto px-6 md:px-12 py-24">
     <!-- Breadcrumbs -->
     <nav class="flex text-sm text-gray-400 mb-8 uppercase tracking-wider" aria-label="Breadcrumb">
-      <ol class="inline-flex items-center space-x-1 md:space-x-3">
+      <ol class="inline-flex items-center space-x-2 md:space-x-3">
         <li class="inline-flex items-center">
-          <a href="/" class="hover:text-white transition-colors">Home</a>
+          <a href="/" class="hover:text-white transition-colors mx-0">Home</a>
+        </li>
+        <li>
+            <span>/</span>
         </li>
         <li>
           <div class="flex items-center">
-            <span class="mx-2">/</span>
             <a href={`/categories/${product.category}`} class="hover:text-white transition-colors">{product.category.replace('-', ' ')}</a>
           </div>
         </li>
+        <li>
+            <span>/</span>
+        </li>
         <li aria-current="page">
           <div class="flex items-center">
-            <span class="mx-2">/</span>
             <span class="text-white">{product.name}</span>
           </div>
         </li>
@@ -67,21 +72,34 @@ if (!product) {
           <div class="flex space-x-4">
             {product.colors.map(color => (
               <div class="group relative">
-                <div class={`w-10 h-10 rounded-full border border-white/20 shadow-xl ${color.toLowerCase() === 'white' ? 'bg-white' : 'bg-black'} ${color.toLowerCase() === 'white' ? '' : 'ring-1 ring-white/10'}`} title={color}></div>
-                <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-white/0 group-hover:text-white/70 transition-colors uppercase tracking-widest">{color}</span>
+                <div 
+                  class="w-10 h-10 rounded-full border border-white/20 shadow-xl focus:outline-none focus:ring-2 focus:ring-white transition-transform hover:scale-105"
+                  style={`background-color: ${color.hex};`}
+                  title={color.name}
+                  aria-label={`Select color: ${color.name}`}
+                  tabindex="0"
+                ></div>
+                <span class="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-white/0 group-hover:text-white/70 transition-colors uppercase tracking-widest whitespace-nowrap">{color.name}</span>
               </div>
             ))}
           </div>
         </div>
 
         <div class="mt-8 border-t border-white/10 pt-8">
-          <h3 class="text-sm font-bold uppercase tracking-widest text-white/60 mb-4">Available Sizes</h3>
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-white/60">Available Sizes</h3>
+            <button id="open-size-chart" class="text-xs text-white underline hover:no-underline uppercase tracking-wider offset-2 decoration-white/30 hover:text-gray-300 transition-colors">
+              Size Guide
+            </button>
+          </div>
           <div class="flex flex-wrap gap-3">
             {product.sizes.map(size => (
               <span class="px-6 py-3 border border-white/10 rounded-lg text-white/80 hover:border-white hover:text-white transition-all cursor-default font-mono text-sm">{size}</span>
             ))}
           </div>
         </div>
+
+        <SizeChart category={product.category} />
 
         <a href="https://forms.gle/WTZkpiupp8tSb56C9" target="_blank" class="mt-12 w-full md:w-auto inline-flex justify-center items-center bg-white text-black px-12 py-4 font-bold uppercase tracking-widest hover:bg-gray-200 transition-all duration-300 hover:scale-105">
           Order Now
@@ -115,4 +133,6 @@ if (!product) {
       }
     });
   });
+
+
 </script>

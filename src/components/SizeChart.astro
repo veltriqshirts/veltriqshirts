@@ -1,0 +1,146 @@
+---
+interface Props {
+  category: string;
+}
+
+const { category } = Astro.props as Props;
+
+const sizeData: Record<string, { title: string; headers: string[]; rows: string[][] }> = {
+  "oversized-tshirts": {
+    title: "Oversized T-Shirts",
+    headers: ["Size", "Chest (in)", "Length (in)", "Shoulder (in)"],
+    rows: [
+      ["S", "44", "28", "21"],
+      ["M", "46", "29", "22"],
+      ["L", "48", "30", "23"],
+      ["XL", "50", "31", "24"]
+    ]
+  },
+  "crop-tops": {
+    title: "Crop Tops",
+    headers: ["Size", "Bust (in)", "Length (in)", "Waist (in)"],
+    rows: [
+      ["XS", "32", "15", "24"],
+      ["S", "34", "16", "26"],
+      ["M", "36", "17", "28"]
+    ]
+  }
+};
+
+const data = sizeData[category] || sizeData["oversized-tshirts"]; // specific fallback
+---
+
+<div 
+  id="size-chart-overlay" 
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+  aria-hidden="true"
+>
+  <div 
+    id="size-chart-content"
+    class="bg-[#0a0a0a] border border-white/10 p-6 md:p-10 rounded-xl max-w-2xl w-[90%] mx-auto relative shadow-2xl overflow-hidden transform scale-95 transition-all duration-300"
+    role="dialog"
+    aria-modal="true"
+  >
+    <!-- Close Button -->
+    <button id="close-size-chart" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors focus:outline-none z-10">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <h2 class="text-2xl font-light uppercase tracking-widest text-white mb-8 text-center">{data.title} Size Guide</h2>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left text-gray-400">
+        <thead class="text-xs text-white uppercase bg-white/5 tracking-wider">
+          <tr>
+            {data.headers.map(header => (
+              <th scope="col" class="px-6 py-4 border-b border-white/10 text-center">
+                {header}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.rows.map((row, index) => (
+            <tr class={`border-b border-white/5 hover:bg-white/5 transition-colors ${index === data.rows.length - 1 ? 'border-b-0' : ''}`}>
+              {row.map((cell, cellIndex) => (
+                <td class={`px-6 py-4 text-center ${cellIndex === 0 ? 'font-bold text-white' : ''}`}>
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    
+    <p class="mt-6 text-xs text-center text-gray-500 font-light tracking-wide uppercase">
+      Measurements are in inches. Tolerance +/- 0.5 inch.
+    </p>
+  </div>
+</div>
+
+<script>
+  let isSizeChartOpen = false;
+  const overlay = document.getElementById('size-chart-overlay');
+  const content = document.getElementById('size-chart-content');
+  const closeBtn = document.getElementById('close-size-chart');
+  const openBtn = document.getElementById('open-size-chart');
+
+  function toggleModal(show: boolean) {
+    if (!overlay || !content) return;
+    
+    isSizeChartOpen = show;
+
+    if (show) {
+      // Open
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      overlay.classList.add('opacity-100', 'pointer-events-auto');
+      overlay.setAttribute('aria-hidden', 'false');
+      
+      content.classList.remove('scale-95');
+      content.classList.add('scale-100');
+      
+      document.body.style.overflow = 'hidden'; // Lock scroll
+    } else {
+      // Close
+      overlay.classList.remove('opacity-100', 'pointer-events-auto');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+      overlay.setAttribute('aria-hidden', 'true');
+      
+      content.classList.remove('scale-100');
+      content.classList.add('scale-95');
+      
+      document.body.style.overflow = ''; // Unlock scroll
+    }
+  }
+
+  // Event Listeners
+  if (openBtn) {
+    openBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleModal(true);
+    });
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      toggleModal(false);
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        toggleModal(false);
+      }
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isSizeChartOpen) {
+      toggleModal(false);
+    }
+  });
+</script>
