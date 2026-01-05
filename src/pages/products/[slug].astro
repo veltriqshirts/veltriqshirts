@@ -65,7 +65,7 @@ if (!product) {
             <p class="text-xl text-gray-500 line-through decoration-white/30 decoration-1">{product.originalPrice}</p>
           )}
         </div>
-        <p class="text-gray-400 font-light leading-relaxed mb-10 text-lg">{product.description}</p>
+        <p class="text-lg text-gray-300 font-light leading-relaxed mb-8">{product.description}</p>
         
         <div class="mt-8 border-t border-white/10 pt-8">
           <h3 class="text-sm font-bold uppercase tracking-widest text-white/60 mb-4">Available Colors</h3>
@@ -104,6 +104,15 @@ if (!product) {
         <a href="https://forms.gle/WTZkpiupp8tSb56C9" target="_blank" class="mt-12 w-full md:w-auto inline-flex justify-center items-center bg-white text-black px-12 py-4 font-bold uppercase tracking-widest hover:bg-gray-200 transition-all duration-300 hover:scale-105">
           Order Now
         </a>
+
+        {product.fabricInfo && (
+          <div class="mt-12 border-t border-white/10 pt-8">
+            <h3 class="text-sm font-bold uppercase tracking-widest text-white/60 mb-4">Fabric & Care</h3>
+            <div class="text-gray-400 text-base leading-relaxed whitespace-pre-line">
+              {product.fabricInfo}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   </div>

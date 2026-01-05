@@ -1,61 +1,149 @@
 [
   {
-    "name": "Oversized Tee - Black",
-    "slug": "oversized-tee-black",
+    "name": "ENIGMA",
+    "slug": "enigma",
     "category": "oversized-tshirts",
-    "price": "₹1,299",
-    "originalPrice": "₹1,999",
-    "description": "A classic oversized t-shirt made from premium heavyweight cotton. Perfect for a minimal, relaxed fit.",
-    "images": ["/images/pic01.jpg", "/images/pic05.jpg", "/images/pic09.jpg"],
+    "price": "₹649",
+    "originalPrice": "₹999",
+    "description": "An oversized heavyweight t-shirt featuring the ENIGMA back print. Minimal, understated, and timeless — designed for everyday wear.",
+    "fabricInfo": "Fabric: 100% cotton with 240 GSM heavyweight yet breathable for the perfect oversized drape.\nFit: Unisex oversized fit with extra length and dropped sleeves for a relaxed, stylish slouch.\nCare: Wash inside-out in cold water. Dry on low heat. Flip inside-out before ironing.",
+    "images": [
+      "/images/mockups/tees/tee-enigma-black.png",
+      "/images/mockups/tees/tee-enigma-white.png"
+    ],
     "colors": [
       { "name": "Black", "hex": "#000000" },
       { "name": "White", "hex": "#FFFFFF" }
     ],
-    "sizes": ["S", "M", "L", "XL"],
-    "tags": ["new", "bestseller"]
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
+    "tags": ["new", "drop-01"]
   },
   {
-    "name": "Crop Top - White",
-    "slug": "crop-top-white",
-    "category": "crop-tops",
-    "price": "₹999",
-    "originalPrice": "₹1,499",
-    "description": "A stylish and comfortable crop top, designed for a modern and chic look.",
-    "images": ["/images/pic02.jpg", "/images/pic06.jpg"],
-    "colors": [
-      { "name": "White", "hex": "#FFFFFF" },
-      { "name": "Black", "hex": "#000000" },
-      { "name": "Grey", "hex": "#808080" }
-    ],
-    "sizes": ["XS", "S", "M", "L", "XL"],
-    "tags": ["new"]
-  },
-  {
-    "name": "Oversized Tee - White",
-    "slug": "oversized-tee-white",
+    "name": "OBSESSED",
+    "slug": "obsessed",
     "category": "oversized-tshirts",
-    "price": "₹1,299",
-    "description": "A classic oversized t-shirt made from premium heavyweight cotton. Perfect for a minimal, relaxed fit.",
-    "images": ["/images/pic03.jpg", "/images/pic07.jpg"],
+    "price": "₹649",
+    "originalPrice": "₹999",
+    "description": "A minimalist oversized tee with the OBSESSED back print. Clean typography, heavyweight cotton, and a relaxed drape.",
+    "fabricInfo": "Fabric: 100% cotton with 240 GSM heavyweight yet breathable for the perfect oversized drape.\nFit: Unisex oversized fit with extra length and dropped sleeves for a relaxed, stylish slouch.\nCare: Wash inside-out in cold water. Dry on low heat. Flip inside-out before ironing.",
+    "images": [
+      "/images/mockups/tees/tee-obsessed-black.png",
+      "/images/mockups/tees/tee-obsessed-white.png"
+    ],
     "colors": [
-      { "name": "White", "hex": "#FFFFFF" },
+      { "name": "Black", "hex": "#000000" },
+      { "name": "White", "hex": "#FFFFFF" }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
+    "tags": ["new", "bestseller", "drop-01"]
+  },
+  {
+    "name": "Butterfly",
+    "slug": "butterfly",
+    "category": "oversized-tshirts",
+    "price": "₹649",
+    "originalPrice": "₹999",
+    "description": "Oversized t-shirt featuring a detailed butterfly graphic on the back. Crafted from heavyweight cotton with a relaxed silhouette.",
+    "fabricInfo": "Fabric: 100% cotton with 240 GSM heavyweight yet breathable for the perfect oversized drape.\nFit: Unisex oversized fit with extra length and dropped sleeves for a relaxed, stylish slouch.\nCare: Wash inside-out in cold water. Dry on low heat. Flip inside-out before ironing.",
+    "images": [
+      "/images/mockups/tees/tee-butterfly-black.png",
+      "/images/mockups/tees/tee-butterfly-white.png"
+    ],
+    "colors": [
+      { "name": "Black", "hex": "#000000" },
+      { "name": "White", "hex": "#FFFFFF" }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
+    "tags": ["new", "drop-01", "bestseller"]
+  },
+  {
+    "name": "IV",
+    "slug": "iv",
+    "category": "oversized-tshirts",
+    "price": "₹649",
+    "originalPrice": "₹999",
+    "description": "A minimalist oversized tee featuring a clean Roman numeral design. Built for subtle statement and long-term wear.",
+    "fabricInfo": "Fabric: 100% cotton with 240 GSM heavyweight yet breathable for the perfect oversized drape.\nFit: Unisex oversized fit with extra length and dropped sleeves for a relaxed, stylish slouch.\nCare: Wash inside-out in cold water. Dry on low heat. Flip inside-out before ironing.",
+    "images": [
+      "/images/mockups/tees/tee-iv-black.png",
+      "/images/mockups/tees/tee-iv-white.png"
+    ],
+    "colors": [
+      { "name": "Black", "hex": "#000000" },
+      { "name": "White", "hex": "#FFFFFF" }
+    ],
+    "sizes": ["XS", "S", "M", "L", "XL", "2XL"],
+    "tags": ["new", "drop-01"]
+  },
+
+  {
+    "name": "DISCIPLINE",
+    "slug": "discipline",
+    "category": "oversized-hoodies",
+    "price": "₹1,199",
+    "originalPrice": "₹1,999",
+    "description": "A heavyweight oversized hoodie featuring the DISCIPLINE print. Designed to embody control, focus, and quiet consistency.",
+    "fabricInfo": "Fabric: 100% cotton, 400 GSM – soft, and made to keep you warm without feeling stuffy.\nFit: Unisex oversized fit with dropped shoulders and a relaxed silhouette.\nCare: Wash inside-out in cold water. Dry on low heat. Flip it inside out before ironing.",
+    "images": [ 
+      "/images/mockups/hoodies/hoodie-discipline-black.png",
+      "/images/mockups/hoodies/hoodie-discipline-maroon.png"
+    ],
+    "colors": [
+      { "name": "Black", "hex": "#000000" },
+      { "name": "Maroon", "hex": "#800020" }
+    ],
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "tags": ["new", "drop-01", "bestseller"]
+  },
+  {
+    "name": "YOU vs YOU",
+    "slug": "you-vs-you",
+    "category": "oversized-hoodies",
+    "price": "₹1,199",
+    "originalPrice": "₹1,999",
+    "description": "An oversized hoodie featuring the YOU vs YOU statement print. A reminder that the real battle is internal.",
+    "fabricInfo": "Fabric: 100% cotton, 400 GSM – soft, and made to keep you warm without feeling stuffy.\nFit: Unisex oversized fit with dropped shoulders and a relaxed silhouette.\nCare: Wash inside-out in cold water. Dry on low heat. Flip it inside out before ironing.",
+    "images": [
+      "/images/mockups/hoodies/hoodie-youvsyou-black.png"
+    ],
+    "colors": [
       { "name": "Black", "hex": "#000000" }
     ],
-    "sizes": ["S", "M", "L", "XL"],
-    "tags": ["bestseller"]
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "tags": ["new", "drop-01", "bestseller"]
   },
   {
-    "name": "Crop Top - Black",
-    "slug": "crop-top-black",
-    "category": "crop-tops",
-    "price": "₹999",
-    "description": "A stylish and comfortable crop top, designed for a modern and chic look.",
-    "images": ["/images/pic04.jpg", "/images/pic08.jpg"],
-    "colors": [
-      { "name": "Black", "hex": "#000000" },
-      { "name": "White", "hex": "#FFFFFF" }
+    "name": "EYES",
+    "slug": "eyes",
+    "category": "oversized-hoodies",
+    "price": "₹1,199",
+    "originalPrice": "₹1,999",
+    "description": "A statement oversized hoodie featuring the EYES graphic on the back. Subtle, unsettling, and intentionally minimal.",
+    "fabricInfo": "Fabric: 100% cotton, 400 GSM – soft, and made to keep you warm without feeling stuffy.\nFit: Unisex oversized fit with dropped shoulders and a relaxed silhouette.\nCare: Wash inside-out in cold water. Dry on low heat. Flip it inside out before ironing.",
+    "images": [
+      "/images/mockups/hoodies/hoodie-eyes-black.png"
     ],
-    "sizes": ["XS", "S", "M"],
-    "tags": []
+    "colors": [
+      { "name": "Black", "hex": "#000000" }
+    ],
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "tags": ["new", "drop-01"]
+  },
+  {
+    "name": "BROKEN DISC",
+    "slug": "broken-disc",
+    "category": "oversized-hoodies",
+    "price": "₹1,199",
+    "originalPrice": "₹1,999",
+    "description": "An oversized hoodie featuring the broken disc graphic. A raw, abstract piece symbolizing disruption and repetition.",
+    "fabricInfo": "Fabric: 100% cotton, 400 GSM – soft, and made to keep you warm without feeling stuffy.\nFit: Unisex oversized fit with dropped shoulders and a relaxed silhouette.\nCare: Wash inside-out in cold water. Dry on low heat. Flip it inside out before ironing.",
+    "images": [
+      "/images/mockups/hoodies/hoodie-disc-black.png"
+    ],
+    "colors": [
+      { "name": "Black", "hex": "#000000" }
+    ],
+    "sizes": ["S", "M", "L", "XL", "2XL", "3XL"],
+    "tags": ["new", "drop-01"]
   }
 ]
